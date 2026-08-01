@@ -61,6 +61,10 @@ html[data-theme="dark"] {
   --col-white: #fff;
 }
 
+.anchor-target {
+    scroll-margin-top: 80px; /* match your header height */
+}
+
 
 /*
 ---------------------------
