@@ -1,83 +1,75 @@
-![Awesome Portfolio Website](./readme_assets/banner_apw.png)
+# Eric Lucas | Portfolio
 
-<div align="center">
+A personal portfolio website showcasing my projects, education, and background — condensed into a single, scrollable page.
 
-<a href="https://github.com/smaranjitghose/awesome-portfolio-websites"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"></a>
-<a href="https://github.com/smaranjitghose/awesome-portfolio-websites"><img src="https://img.shields.io/badge/Built%20by-developers%20%3C%2F%3E-0059b3"></a>
-<a href="https://github.com/smaranjitghose/awesome-portfolio-websites"><img src="https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&color=yellow"></a>
-<a href="https://github.com/smaranjitghose/"><img src="https://img.shields.io/badge/Maintained%3F-yes-brightgreen.svg?v=103"></a>
-<a href="https://github.com/smaranjitghose/awesome-portfolio-websites/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?v=103"></a>
+## About This Project
 
-<a href="https://github.com/smaranjitghose/awesome-portfolio-websites/graphs/contributors"><img src="https://img.shields.io/github/contributors/smaranjitghose/awesome-portfolio-websites?color=brightgreen"></a>
-<a href="https://github.com/smaranjitghose/awesome-portfolio-websites/stargazers"><img src="https://img.shields.io/github/stars/smaranjitghose/awesome-portfolio-websites?color=0059b3"></a>
-<a href="https://github.com/smaranjitghose/awesome-portfolio-websites/network/members"><img src="https://img.shields.io/github/forks/smaranjitghose/awesome-portfolio-websites?color=yellow"></a>
-<a href="https://github.com/smaranjitghose/awesome-portfolio-websites/issues"><img src="https://img.shields.io/github/issues/smaranjitghose/awesome-portfolio-websites?color=0059b3"></a>
-<a href="https://github.com/smaranjitghose/awesome-portfolio-websites/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed-raw/smaranjitghose/awesome-portfolio-websites?color=yellow"></a>
-<a href="https://github.com/smaranjitghose/awesome-portfolio-websites/pulls"><img src="https://img.shields.io/github/issues-pr/smaranjitghose/awesome-portfolio-websites?color=brightgreen"></a>
-<a href="https://github.com/smaranjitghose/awesome-portfolio-websites/pulls?q=is%3Apr+is%3Aclosed"><img src="https://img.shields.io/github/issues-pr-closed-raw/smaranjitghose/awesome-portfolio-websites?color=0059b3"></a>
+This site is adapted from an open-source portfolio template originally built by [Smaranjit Ghose](https://github.com/smaranjitghose) ([portfolio.smaranjitghose.codes](https://portfolio.smaranjitghose.codes)), which was designed as a free, multi-page portfolio template (separate `index.html`, `projects.html`, and `education.html` pages).
 
-</div>
+I took that original multi-page template and restructured it into a **single-page layout**, merging the Home, Projects, Education, and MOOC/Accreditations sections into one continuous scrolling page, along with a custom About Me section, updated content, and various styling and bug fixes along the way.
 
-A community maintained open source project aimed at making personal portfolio for researchers, developers and analysts simple, fast and less cumbersome. We make sure you have a full-fledged website to showcase your work while you can spend time on your learning and innovative endeavours.
+## Features
 
-## A sneak peek into what we have here🙈 :
+- **Home** — animated intro with rotating text, social links, and particle background effect
+- **About Me** — two-column bio section with programming language icons
+- **Projects** — dynamically rendered project cards (populated from a JS data array)
+- **Education** — formal education timeline and online course/MOOC accreditations
+- **Contact** — working contact form (submissions routed via [Formcarry](https://formcarry.com/))
+- Fully responsive layout with mobile-specific navigation and spacing adjustments
+- Scroll animations powered by [AOS (Animate On Scroll)](https://michalsnik.github.io/aos/)
 
-### Home Page:
+## Tech Stack
 
-<p align="center"><img src="./readme_assets/Home_Page.gif"></p>
+- HTML5 / CSS3 / vanilla JavaScript
+- [Bootstrap 4](https://getbootstrap.com/) — grid system and base components
+- [Font Awesome 5](https://fontawesome.com/) — icons
+- [Devicon](https://devicon.dev/) — programming language icons not covered by Font Awesome
+- [AOS](https://michalsnik.github.io/aos/) — scroll-triggered animations
+- [particles.js](https://vincentgarreau.com/particles.js/) — animated background effect
+- [Formcarry](https://formcarry.com/) — contact form backend (no custom server required)
 
-### Experience Page:
+## Project Structure
 
-<p align="center"><img src="./readme_assets/Experience_Page.gif"></p>
+```
+├── index.html              # Single-page site (Home, About, Projects, Education, Contact)
+├── assets/
+│   ├── css/
+│   │   ├── style.css       # Global styles
+│   │   ├── home.css        # Home section styles
+│   │   ├── education.css   # Education/timeline styles
+│   │   ├── project.css     # Project card styles
+│   │   └── preloader.css   # Page loader animation
+│   ├── js/
+│   │   ├── app.js          # Core site behavior
+│   │   ├── project.js      # Project card rendering
+│   │   ├── education.js    # Education timeline behavior
+│   │   ├── particle.js     # Particle background config
+│   │   └── dynamicTitle.js # Dynamic browser tab title
+│   └── images/              # Site images and icons
+└── README.md
+```
 
-### Project Page:
+## Running Locally
 
-<p align="center"><img src="./readme_assets/Project_Page.gif"></p>
+Because the site loads local JS/CSS via relative paths, opening `index.html` directly (`file://`) in some browsers or editor preview tools can block those requests. To view it properly:
 
-### Research Page:
+1. Install a local server tool, e.g. the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension for VS Code.
+2. Right-click `index.html` → **Open with Live Server**.
+3. The site will open at `http://localhost:5500` (or similar) with all assets loading correctly.
 
-<p align="center"><img src="./readme_assets/Research_Page.gif"></p>
+## Editing Content
 
-### Education Page:
+- **Projects** — edit the `projects` array in `assets/js/project.js` to add/update project cards (title, image, description, links).
+- **Education** — edit the timeline items directly in `index.html` under the Education section.
+- **About Me** — edit the paragraph text directly in `index.html` under the About Me section.
+- **Contact form** — submissions are routed through Formcarry; update the `action` URL on the `<form>` element with your own Formcarry endpoint, and set your notification email in the Formcarry dashboard.
 
-<p align="center"><img src="./readme_assets/Education_Page.gif"></p>
+## Credits
 
-## How to use this?🛠
+- Original template: [Smaranjit Ghose's Portfolio Template](https://github.com/smaranjitghose) — licensed for free use and modification.
+- Icons: [Font Awesome](https://fontawesome.com/), [Devicon](https://devicon.dev/)
+- Animations: [AOS](https://michalsnik.github.io/aos/)
 
-[Check out our awesome Documentation](https://smaranjitghose.github.io/awesome-portfolio-websites/)
+## License
 
-## Contribution Guidelines🏗
-
-Are we missing any of your favorite features, which you think you can add to it❓ We invite you to contribute to this project and improve it further.
-
-Click on the image below to set up and contribute to the project or [Click here](https://github.com/smaranjitghose/awesome-portfolio-websites/blob/master/CONTRIBUTING.md)
-
-<a href = "https://github.com/smaranjitghose/awesome-portfolio-websites/blob/master/CONTRIBUTING.md">
-<img src = "./readme_assets/Contribution.png"></a>
-
-## Project Maintainers👨🏫:
-
-| <img src = "https://avatars2.githubusercontent.com/u/46641503?v=4"> | <img src = "https://avatars2.githubusercontent.com/u/40017559?v=4"> | 
-| :----------------------------------------------------------: | :----------------------------------------------------------: | 
-|     [Smaranjit Ghose](https://github.com/smaranjitghose) |    [Anush Bhatia](https://github.com/anushbhatia)                       
-
-
-## Our valuable Contributors👩‍💻👨‍💻 :
-
-<a href="https://github.com/smaranjitghose/awesome-portfolio-websites/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=smaranjitghose/awesome-portfolio-websites" />
-</a>
-
-## Open Source Programs we have been a part of:
-
-<p align="center">
-<a href="https://scodein.tech/"><img src="./readme_assets/open_source_programs/sci.png" width= "25%"/></a>
-<a href="https://hakincodes.tech/"><img src="./readme_assets/open_source_programs/ch.png" width= "25%"/></a>
-<a href="https://njackwinterofcode.github.io/"><img src="./readme_assets/open_source_programs/nwoc.png" width= "25%" /></a>
-<a href="https://devscript.tech/woc/"><img src="./readme_assets/open_source_programs/dwoc.png" width="25%"></a>
-<a href="https://mexili.github.io/winter_of_code/#/"><img src="./readme_assets/open_source_programs/mwoc.png" width="25%"></a>
-<a href="https://crosswoc.ieeedtu.in/"><img src="./readme_assets/open_source_programs/crosswoc.png" width="25%"></a>
-<a href="https://letsgrowmore.in/soc/"><img src="./readme_assets/open_source_programs/lgmsoc.png" width="25%"></a>
-<a href="https://devincept.codes/"><img src="./readme_assets/open_source_programs/devincept.gif" width="25%"></a>
-<a href="https://ghc.anitab.org/programs-and-awards/open-source-day/"><img src="./readme_assets/open_source_programs/OSD.jpg" width="25%"></a>
-</p>
+This project is based on an open-source template. Please refer to the original template's license for terms of reuse and modification.
