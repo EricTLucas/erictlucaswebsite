@@ -4,68 +4,18 @@ AOS.init();
 
 const moocs = document.querySelector(".moocs");
 const moocscards = [
-  {
-    title: "Data Science",
-    cardImage: "assets/images/education-page/coursera2.svg",
-    moocLink: "https://www.coursera.org/browse/data-science",
-  },
-  {
-    title: "Cryptography",
-    cardImage: "assets/images/education-page/udemy.svg",
-    moocLink: "https://www.udemy.com/course/cryptography-for-beginners/",
-  },
+  
   {
     title: "Machine Learning",
     cardImage: "assets/images/education-page/coursera2.svg",
-    moocLink: "https://www.coursera.org/learn/machine-learning",
+    moocLink: "https://www.coursera.org/account/accomplishments/specialization/certificate/CQEIGJ11EQ2P",
   },
   {
-    title: "Introduction to HTML 5",
-    cardImage: "assets/images/education-page/udacity.svg",
-    moocLink: "https://www.udacity.com/course/intro-to-html-and-css--ud001",
-  },
-  {
-    title: "Introduction to CSS 3",
-    cardImage: "assets/images/education-page/udacity.svg",
-    moocLink: "https://www.udacity.com/course/intro-to-html-and-css--ud001",
-  },
-  {
-    title: "Javascript",
-    cardImage: "assets/images/education-page/udacity.svg",
-    moocLink: "https://www.udacity.com/course/intro-to-javascript--ud803",
-  },
-  {
-    title: "Bootstrap 4",
-    cardImage: "assets/images/education-page/udemy.svg",
-    moocLink: "https://www.udemy.com/course/bootstrap-4-tutorials/",
-  },
-  {
-    title: "Intro to React",
-    cardImage: "assets/images/education-page/edx.svg",
-    moocLink: "https://www.edx.org/learn/reactjs",
-  },
-  {
-    title: "Intro to React Native",
+    title: "Deep Learning",
     cardImage: "assets/images/education-page/coursera2.svg",
-    moocLink:
-      "https://www.coursera.org/lecture/react-native/introduction-to-react-native-Eax0D",
-  },
-  {
-    title: "NodeJS, Express and MongoDB",
-    cardImage: "assets/images/education-page/coursera2.svg",
-    moocLink: "https://www.coursera.org/learn/server-side-nodejs",
-  },
-  {
-    title: "XML-AJAX",
-    cardImage: "assets/images/education-page/udemy.svg",
-    moocLink: "https://www.udemy.com/course/xml-from-beginner-to-expert/",
-  },
-  {
-    title: "Data Structures & Algorithms",
-    cardImage: "assets/images/education-page/udacity.svg",
-    moocLink:
-      "https://www.udacity.com/course/data-structures-and-algorithms-nanodegree--nd256",
-  },
+    moocLink: " https://www.coursera.org/account/accomplishments/specialization/certificate/SVCG4E2SRF02",
+  }
+  
 ];
 
 const experience = [
@@ -113,7 +63,7 @@ const showCards = () => {
   moocscards.forEach(
     ({ title, cardImage, moocLink }) =>
       (output += `        
-        <div class="col-6 col-md-3 col-sm-4 column" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="600" >  
+        <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 column" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="600">
             <div class="card mb-3 mx-auto">
                <div class="content">
                   <div class="content-overlay"></div>
@@ -217,3 +167,121 @@ $(function () {
     duration: 800,
   });
 });
+
+
+
+
+
+/* Project Cards */
+
+// Array of objects for projects
+const projects = [
+  {
+    title: "Exploratory Data Analysis",
+    cardImage: "assets/images/eda_tool.png",
+    description: "Exploratory Data Analysis Tool for quick summaries of csv files.",
+    Githublink: "https://github.com/EricTLucas/EDA-Tool",
+  },
+  {
+    title: "Solitaire Game",
+    cardImage: "assets/images/solitaire.png",
+    description: "A simple solitaire game made with JavaScript.",
+    Previewlink: "https://erictlucas.com/solitaire",
+    Githublink: "https://github.com/EricTLucas/Solitaire",
+  },
+];
+
+// function for rendering project cards data
+function showCards2() {
+  const projectcards = document.querySelector(".projectcards");
+
+  // Visible, no-devtools-needed status message
+  if (!projectcards) {
+    document.body.insertAdjacentHTML(
+      "afterbegin",
+      '<div style="background:red;color:#fff;padding:12px;font-family:monospace;">' +
+      'project.js ERROR: .projectcards element not found in the page.</div>'
+    );
+    return;
+  }
+
+  try {
+  let output = "";
+  projects.forEach(({ title, cardImage, Previewlink, Githublink }) => {
+
+    // Build preview icon only if Previewlink exists
+    const previewIcon = Previewlink
+      ? `
+        <li>
+          <a href="${Previewlink}" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" viewBox="0 0 30 28" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-monitor">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </a>
+        </li>
+      `
+      : ""; // empty string → icon removed
+
+    output += `
+      <div class="column skill-card card" style="margin: 15px" data-aos="zoom-in-up" data-aos-easing="linear" data-aos-delay="300" data-aos-duration="600">
+        <div class="wrapper" style="background: url(${cardImage}) center / cover no-repeat;">
+          <div class="header"></div>
+          <div class="data">
+            <div class="content">
+              <div class="title-div">
+                <h2 class="title"><a href="#">${title}</a></h1>
+              </div>
+              <ul class="menu-content"><br>
+                ${previewIcon}
+                <li>
+                  <a href="${Githublink}" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" viewBox="0 0 30 28" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>`;
+  });
+
+    projectcards.innerHTML = output;
+
+    if (typeof AOS !== "undefined") {
+      AOS.refreshHard();
+    }
+  } catch (err) {
+    // Print the actual error directly on the page so you can read it without devtools
+    document.body.insertAdjacentHTML(
+      "afterbegin",
+      '<div style="background:red;color:#fff;padding:12px;font-family:monospace;white-space:pre-wrap;">' +
+      "project.js ERROR: " + err.message + "</div>"
+    );
+  }
+}
+
+// Run now if the DOM is already ready, otherwise wait for it
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", showCards2);
+} else {
+  showCards2();
+}
+
+// Search/filter function — only relevant if you have a #myInput search box
+function myFunction() {
+  const input = document.getElementById("myInput");
+  if (!input) return;
+
+  const query = input.value.toUpperCase();
+  const cards = document.getElementsByClassName("skill-card");
+  const titles = document.getElementsByClassName("title");
+
+  for (let i = 0; i < cards.length; i++) {
+    const matches = titles[i].innerHTML.toUpperCase().includes(query);
+    cards[i].style.display = matches ? "" : "none";
+  }
+}

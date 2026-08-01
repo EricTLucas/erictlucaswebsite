@@ -787,6 +787,95 @@ Rotate Transition in foote Soical Icon
 }
 
 
+/* About Me Section */
+
+.aboutSection {
+  padding: 150px 20px 20px 20px; /* more space above, before the previous section */
+}
+
+.about-grid {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 0 0 75%;
+  max-width: 75%;
+  text-align: left;
+}
+
+.about-text p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 22px; /* more breathing room between paragraphs */
+  margin-top: 10px;
+}
+
+.lang-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 24px;
+}
+
+.lang-icons i {
+  font-size: 32px;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.lang-icons i:hover {
+  color: #fff;
+  transform: translateY(-4px);
+}
+
+.about-photo-icon {
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-photo-icon i {
+  font-size: 90px;
+  color: #bb86fc;
+}
+
+.about-photo {
+  flex: 0 0 25%;
+  max-width: 25%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Stack on smaller screens */
+@media (max-width: 768px) {
+  .about-grid {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+
+  
+
+  .about-text,
+  .about-photo {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .lang-icons {
+    justify-content: center;
+  }
+}
+
+
 /************
 Contact Form In Footer
 *************/
@@ -917,6 +1006,12 @@ form {
   background-color: rgb(37, 51, 46);
   height: 1.5px;
 }
+
+.footer p {
+    background:  #2b2a2a;
+    padding-top: 20px;
+    padding-bottom: 20px;
+ }
 
 
 /* to make the navbar open full screen on mobile */
