@@ -128,7 +128,7 @@ p {
 }
 @media only screen and (max-width: 767px) {
   .edSection {
-    margin-top: 400px;
+    margin-top: 50px;
   }
 }
 @media only screen and (max-width: 600px) {

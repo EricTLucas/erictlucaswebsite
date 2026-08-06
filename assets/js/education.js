@@ -181,6 +181,7 @@ const projects = [
     cardImage: "assets/images/eda_tool.png",
     description: "Exploratory Data Analysis Tool for quick summaries of csv files.",
     Githublink: "https://github.com/EricTLucas/EDA-Tool",
+    mainlink: "https://github.com/EricTLucas/EDA-Tool",
   },
   {
     title: "Solitaire Game",
@@ -188,6 +189,7 @@ const projects = [
     description: "A simple solitaire game made with JavaScript.",
     Previewlink: "https://erictlucas.com/solitaire",
     Githublink: "https://github.com/EricTLucas/Solitaire",
+    mainlink: "https://erictlucas.com/solitaire",
   },
 ];
 
@@ -207,7 +209,7 @@ function showCards2() {
 
   try {
   let output = "";
-  projects.forEach(({ title, cardImage, Previewlink, Githublink }) => {
+  projects.forEach(({ title, cardImage, Previewlink, Githublink, mainlink }) => {
 
     // Build preview icon only if Previewlink exists
     const previewIcon = Previewlink
@@ -225,13 +227,14 @@ function showCards2() {
       : ""; // empty string → icon removed
 
     output += `
-      <div class="column skill-card card" style="margin: 15px" data-aos="zoom-in-up" data-aos-easing="linear" data-aos-delay="300" data-aos-duration="600">
+      <div class="column skill-card card" style="margin: 15px" data-aos="zoom-in-up" data-aos-easing="linear" data-aos-delay="300" data-aos-duration="600" href="${mainlink}">
+        <a href="${mainlink}" target="_blank" class="card-stretched-link"></a>
         <div class="wrapper" style="background: url(${cardImage}) center / cover no-repeat;">
           <div class="header"></div>
           <div class="data">
             <div class="content">
               <div class="title-div">
-                <h2 class="title"><a href="#">${title}</a></h1>
+                <h2 class="title">${title}</h2>
               </div>
               <ul class="menu-content"><br>
                 ${previewIcon}

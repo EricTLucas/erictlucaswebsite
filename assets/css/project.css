@@ -514,13 +514,13 @@ ul {
 
 @media only screen and (max-width: 767px) {
   .project-box {
-    margin-top: 18rem;
+    margin-top: 2rem;
   }
 }
 
 @media only screen and (max-width: 450px) {
   .project-box {
-    margin-top: 18rem;
+    margin-top: 2rem;
   }
 }
 
@@ -855,4 +855,18 @@ SVG ANIMATIONS PROJECT PAGE
   animation-iteration-count: infinite;
   animation-duration: 3.3s;
   transform-origin: 785.132px 295.833px;
+}
+
+.card-stretched-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 1;
+}
+
+.skill-card .social-icon {
+  position: relative;
+  z-index: 2;
 }

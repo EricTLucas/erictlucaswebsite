@@ -91,7 +91,7 @@ let footer = $(`
     </svg>
     </a>
 
-    <p>With inspiration from <a href="https://github.com/smaranjitghose/awesome-portfolio-websites">smaranjitghose's</a> portfolio</p>
+    <p>With inspiration from <a href="https://github.com/smaranjitghose/awesome-portfolio-websites" target="_blank">smaranjitghose's</a> portfolio</p>
 
     
     </div>
@@ -163,7 +163,23 @@ $(function () {
       menuOpen = false;
     }
   });
+
+      // Close menu when a nav link is clicked
+    const navLinks = document.querySelectorAll("#navbar-content .nav-link");
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        menuBtn.classList.remove("open");
+        menuOpen = false;
+        $("#navbarSupportedContent").collapse("hide");
+        $("#js-hamburger").toggleClass("is-active");
+      });
+    });
+
 });
+
+
+
 
 // function for toggling hamburger is-active class
 
@@ -171,38 +187,6 @@ $(function () {
   $("#js-hamburger").on("click", function () {
     $(this).toggleClass("is-active");
   });
-});
-
-// Navbar current page highlight
-
-let loader = document.querySelector(".loader-container");
-
-window.addEventListener("load", vanish);
-
-function vanish() {
-  loader.classList.add("disappear");
-}
-$(function () {
-  $("a.nav-link").each(function () {
-    if ($(this).prop("href") == window.location.href) {
-      $(this).addClass("current-link");
-    }
-  });
-});
-
-//function to remove underline on hover
-
-$(document).ready(function () {
-  $("a.nav-link").hover(
-    function () {
-      $(this).removeClass("current-link");
-    },
-    function () {
-      if ($(this).prop("href") == window.location.href) {
-        $(this).addClass("current-link");
-      }
-    }
-  );
 });
 
 //consistent light mode for page change
@@ -225,31 +209,6 @@ if (localStorage.getItem("lightMode") == "light") {
   localStorage.setItem("lightMode", "dark");
 }
 
-function toggle_light_mode() {
-  console.log(localStorage.getItem("lightMode"));
-  var app = document.getElementsByTagName("HTML")[0];
-  var nav = document.getElementById("navbar");
-  if (localStorage.lightMode == "dark") {
-    localStorage.lightMode = "light";
-    app.setAttribute("light-mode", "light");
-    nav.classList.remove("dark-theme");
-    var sc = document.getElementsByClassName("socialicon");
-    for (var i = 0; i < sc.length; i++) {
-      sc[i].classList.remove("dsc");
-    }
-  } else {
-    nav.classList.add("dark-theme");
-    localStorage.lightMode = "dark";
-    app.setAttribute("light-mode", "dark");
-    var sc = document.getElementsByClassName("socialicon");
-    for (var i = 0; i < sc.length; i++) {
-      sc[i].classList.add("dsc");
-    }
-  }
-
-  // updating the swiper bullets
-  updateColorOfSwiperBullets(localStorage.getItem("lightMode"));
-}
 
 // function to update swiper bullets
 function updateColorOfSwiperBullets(lightMode) {
